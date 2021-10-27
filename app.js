@@ -1,19 +1,26 @@
 var express = require('express');
+
+const cors = require('cors');
+
 var app = express();
 
-//api 서비스를 할 배열
+app.use(cors());    //cors 미들웨어
+
+//api 서비스를 할 배열 
 const contents = [
-    {
+    {        
+        name:'자동차',
         id:1,
-        nm:'자동차'
+        done:true
     },
-    {
+    {        
+        name:'신계약2',
         id:2,
-        nm:'신계약'
+        done:true
     }
 ]
 
-// respond with "hello world" when a GET request is made to the homepage
+// respond with "hello world" when a GET request is made to the homepage 
 app.get('/', function(req, res) {
   //res.send('hello world');
   res.json(contents);
