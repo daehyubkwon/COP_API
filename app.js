@@ -4,7 +4,7 @@ const cors = require('cors');
 
 var app = express();
 
-app.use(cors());    //cors 미들웨어
+app.use(cors());    //cors 미들웨어h  hh
 
 //api 서비스를 할 배열  
 const contents = [
