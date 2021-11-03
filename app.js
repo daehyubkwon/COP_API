@@ -6,7 +6,7 @@ var app = express();
 
 app.use(cors());    //cors 미들웨어
 
-//api 서비스를 할 배열 
+//api 서비스를 할 배열  
 const contents = [
     {        
         name:'자동차',
