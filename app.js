@@ -17,12 +17,20 @@ connection.connect();
 
 // respond with "hello world" when a GET request is made to the homepage 
 app.get('/', function(req, res) {
-    connection.query('SELECT * FROM TODO_LIST', function (error, rows) {
+    connection.query('SELECT * FROM TODO_LIST', (error, rows) => { 
         if (error) throw error;
-       // console.log('The solution is: ', results);
         res.send(rows);
     });
-});  
+});
+
+app.get('/add', function(req, res) {
+    var sql = 'INSERT INTO TODO_LIST(_nm, done) VALUES (?, ?)';
+    var param = [req.query._nm, 'N'];
+    connection.query(sql, param, (error, rows) => {
+        if (error) throw error;
+        res.send(rows);
+    });
+});
    
 //connection.end();
 
